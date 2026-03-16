@@ -156,7 +156,7 @@ body:not(:has(:target)) #home {
 
 .home-image-container img {
   width: 90%;
-  max-width: 800px;
+  max-width: 400px;
   height: auto;
   border: 3px solid #BB9457;
   border-radius: 12px;
@@ -310,4 +310,49 @@ td {
   .main-layout { flex-direction: column; }
   .sidebar { border-bottom: 2px solid var(--camel); padding-bottom: 20px; }
   .container { width: 95%; padding: 10px; }
+}
+
+/* FINAL REQUIREMENT STYLES */
+
+/* I-update ang .watermark class mo */
+.watermark {
+    position: fixed; /* Naka-pako pa rin sa screen */
+    top: 50%;
+    
+    /* BAGUHIN ITO: Mula left patungong right */
+    nav-left: 50px; /* Kaunting distansya mula sa kanang dulo */
+    right: auto; /* Siguraduhing hindi gumagana ang left position */
+    
+    /* BAGUHIN ITO: Alisin ang horizontal translation */
+    transform: translateY(-50%); /* Sentro na lang sa vertical axis */
+    
+    width: 45vw; /* I-adjust ang laki para hindi masyadong malaki sa gilid */
+    max-width: 400px;
+    opacity: 0.15;
+    z-index: 9998; 
+    pointer-events: none;
+}
+
+
+
+.name-container{
+    position: fixed;
+    right: 30px;          /* Nasa kanang gilid */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* Faded Watermark Style */
+    opacity: 0.3;         /* Gawin nating malabo (30% visibility) */
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    color: var(grey);   /* Kulay ng watermark */
+    text-align: right;
+    
+    /* Siguraduhing nasa likod ng content */
+    z-index: 9999;          
+    pointer-events: none; /* Para hindi ma-highlight */
+    line-height: 1.2;
+    
+    /* Opsyonal: I-rotate nang bahagya para magmukhang totoong stamp */
+    writing-mode: horizontal-tb; /* Papababa ang sulat */
 }
